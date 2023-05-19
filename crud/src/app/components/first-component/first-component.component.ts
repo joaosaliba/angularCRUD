@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./first-component.component.css'],
 })
 export class FirstComponentComponent {
+  name: string = 'Jock Jones';
+  data: Date = new Date();
   constructor() {}
   ngOnIniti(): void {}
 }
