@@ -3,7 +3,21 @@
   <ul>
     <li *ngFor="let animal of animals">
       Nome: {{ animal.name }} - Tipo: {{ animal.type }}
+      <button (click)="showAge(animal)">Show Age</button>
     </li>
-    <li>Nome1 :{{ animal.name }} - tipo1: {{ animal.type }}</li>
+    <li>
+      Nome1 :{{ animal.name }} - tipo1: {{ animal.type }}
+      <button (click)="showAge(animal)">Show Age</button>
+    </li>
   </ul>
+  <h3>
+    {{ animalDetails }}
+    <button
+      *ngIf="animalDetails.length > 1; else nothingHere"
+      (click)="animalDetails = ''"
+    >
+      Clear
+    </button>
+    <ng-template #nothingHere> Nothing to show</ng-template>
+  </h3>
 </div>
